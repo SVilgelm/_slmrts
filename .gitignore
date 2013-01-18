@@ -1,0 +1,10 @@
+*~
+*#
+*.pyc
+.settings
+*project
+*.sqlite
+.idea
+system/venv
+var/*.sqlite
+README.md
