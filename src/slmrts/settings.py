@@ -13,11 +13,10 @@ else:
     import tempfile
     LOG_DIR = tempfile.gettempdir()
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Sergey Vilgelm', 'sergey.vilgelm@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -109,18 +108,17 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-#    'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    PROJ_NAME,
     'djbootstrap',
+    'imagekit',
+    PROJ_NAME,
 )
 
 INTERNAL_IPS = (
-    '127.0.0.1',
 )
-
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -136,17 +134,26 @@ LOGGING = {
         }
     },
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+        # 'mail_admins': {
+        #     'level': 'ERROR',
+        #     'filters': ['require_debug_false'],
+        #     'class': 'django.utils.log.AdminEmailHandler'
+        # },
+        'stderr':{
+            'level': 'INFO',
+            'class':'logging.StreamHandler',
         }
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['stderr'],
             'level': 'ERROR',
             'propagate': True,
         },
-    }
+    },
+    'root': {
+        'handlers': ['stderr'],
+        'level': 'ERROR',
+        'propagate': True,
+    },
 }

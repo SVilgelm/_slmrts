@@ -2,8 +2,10 @@ rsync
 nginx
 python-virtualenv
 supervisor
-libjpeg
+libjpeg8
 libjpeg-dev
 libfreetype6
 libfreetype6-dev
 zlib1g-dev
+git
+python-dev
