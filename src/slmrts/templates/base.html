@@ -5,6 +5,9 @@
 {% block jquery_url %}//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js{% endblock %}
 
 {% block extrahead %}
+    <meta name="description" content="Сладкие букеты из конфет, лучше подарка для любимых нет">
+    <meta name="author" content="Валентины Вильгельм">
+    <meta name="keywords" content="Цветы, конфеты, сладкие цветы, заказать">
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
@@ -22,48 +25,14 @@
                 <a class="brand" href="/">Сладкий мир цветов</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
+                        {% include "elems/menu.html" %}
                     </ul>
-                        <span class="navbar-text pull-right">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong></b>+7 (926) 128-2261</strong></a>
-                            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
-                                <li>
-                                    <a tabindex="-1" href="callto:+7-926-128-2261">
-                                        <img src="/static/ico/phone.ico" />
-                                        &nbsp;+7 (926) 128-2261
-                                    </a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="callto:+7-701-214-1899">
-                                        <img src="/static/ico/phone.ico" />
-                                        &nbsp;+7 (701) 214-1899
-                                    </a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="mailto:valentina.vilgelm@gmail.com">
-                                        <img src="/static/ico/gmail.ico" />
-                                        &nbsp;Gmail
-                                    </a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="https://www.facebook.com/valentina.vilgelm">
-                                        <img src="https://www.facebook.com/favicon.ico" />
-                                        &nbsp;Facebook
-                                    </a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="https://www.odnoklassniki.ru/profile/488126364676">
-                                        <img src="https://www.odnoklassniki.ru/favicon.ico" />
-                                        &nbsp;Одноклассники
-                                    </a>
-                                </li>
-                                <li>
-                                    <a tabindex="-1" href="https://www.vk.com/valentina.vilgelm">
-                                        <img src="https://www.vk.com/favicon.ico" />
-                                        &nbsp;ВКонтакте
-                                    </a>
-                                </li>
-                            </ul>
-                        </span>
+                    <span class="navbar-text pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong></b>+7 (926) 128-2261</strong></a>
+                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
+                            {% include "elems/contacts.html" %}
+                        </ul>
+                    </span>
                 </div><!--/.nav-collapse -->
             </div>
         </div>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load djbootstrap %}
+
+{% block title %}
+    {% if bouquet %}
+        {{ block.super }}: Заказать {{ bouquet.name }}
+    {% else %}
+        {{ block.super }}: Как заказать?
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+        <div class="span6">
+            <p>
+                Заказать букеты очень легко, стоит только позвонить или написать мне.
+                <br>
+                <strong>До 20 апреля 2013 г. заказ можно в Алмате.</strong>
+            </p>
+            <menu>
+                {% include "elems/contacts.html" %}
+            </menu>
+            {% if bouquet %}
+                <hr>
+                <h2>{{ bouquet.name }}</h2>
+                <h3>{{ bouquet.cost }} р.</h3>
+                <pre>{{ bouquet.note }}</pre>
+            {% endif %}
+        </div>
+        {% if bouquet %}
+            <div class="span6 row-s" style="text-align: center;">
+                {% include "elems/photos.html" %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

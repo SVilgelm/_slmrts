@@ -22,17 +22,14 @@ class OrderForm(forms.Form):
 
 
 def home(request):
-    client = load_client(request)
-    if client is not None:
-        initial = {
-            'client_name': client.name,
-            'client_email': client.email,
-            'client_phone': client.phone,
-        }
-    else:
-        initial = {}
-    order_form = OrderForm(initial=initial)
     return TemplateResponse(request, 'home.html', context=dict(
-        bouquets = Bouquet.objects.all(),
-        order_form = order_form
+        bouquets=Bouquet.objects.all(),
+    ))
+
+
+def order(request, bouquet_id=None):
+    bouquet = Bouquet.objects.get(id=bouquet_id) if bouquet_id else None
+    return TemplateResponse(request, 'order.html', context=dict(
+        bouquet=bouquet,
+        active_menu='order',
     ))
