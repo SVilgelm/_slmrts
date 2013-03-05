@@ -9,10 +9,10 @@
                     {% include "elems/photos.html" %}
                 </div>
                 <div class="span6">
-                    <a href="/order/{{ bouquet.id }}/" target="_blank" class="btn btn-large btn-primary">Заказать</a>
                     <a href="#{{ bouquet.name }}-{{ bouquet.id }}"><h2>{{ bouquet.name }}</h2></a>
                     <h3>{{ bouquet.cost }} р.</h3>
                     <pre>{{ bouquet.note }}</pre>
+                    <a href="/order/{{ bouquet.id }}/" target="_blank" class="btn btn-large btn-primary">Заказать</a>
                 </div>
             </div>
         </div>
