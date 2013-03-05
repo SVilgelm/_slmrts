@@ -14,9 +14,13 @@
                 <div class="span6" style="text-align: center;">
                     {% with bouquet.photo_set.all as photos %}
                         {% if photos|length_is:"1" %}
-                            <a href="{{ photos.0.original_image.url }}">
-                                <img src="{{ photos.0.big_image.url }}">
-                            </a>
+                            {% with photos.0 as photo %}
+                                <a href="{{ photo.original_image.url }}">
+                                    <img src="{{ photo.big_image.url }}"
+                                        width="{{ photo.big_image.width }}px"
+                                        height="{{ photo.big_image.height }}px">
+                                </a>
+                            {% endwith %}
                             <br>
                             <br>
                         {% elif photos|length > 1 %}
@@ -25,7 +29,9 @@
                                     {% for photo in photos %}
                                         <div class="item{% if forloop.first %} active{% endif %}">
                                             <a href="{{ photo.original_image.url }}">
-                                                <img src="{{ photo.big_image.url }}">
+                                                <img src="{{ photo.big_image.url }}"
+                                                     width="{{ photo.big_image.width }}px"
+                                                     height="{{ photo.big_image.height }}px">
                                             </a>
                                         </div>
                                     {% endfor %}
