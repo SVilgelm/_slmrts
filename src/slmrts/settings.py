@@ -13,13 +13,15 @@ else:
     import tempfile
     LOG_DIR = tempfile.gettempdir()
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+ALLOWED_HOSTS = ('*',)
 
 #DATABASES = {
 #    'default': {
